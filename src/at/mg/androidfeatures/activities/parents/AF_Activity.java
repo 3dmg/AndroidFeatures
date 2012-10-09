@@ -1,10 +1,10 @@
 package at.mg.androidfeatures.activities.parents;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import at.mg.androidfeatures.util.Log;
 
-public class AF_Activity extends Activity {
+public class AF_Activity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

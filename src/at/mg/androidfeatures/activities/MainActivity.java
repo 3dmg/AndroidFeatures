@@ -1,14 +1,16 @@
 package at.mg.androidfeatures.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.text.Html;
+import android.view.View;
 import at.mg.androidfeatures.R;
-import at.mg.androidfeatures.R.layout;
 import at.mg.androidfeatures.activities.parents.AF_Activity;
 import at.mg.androidfeatures.util.Log;
+import at.mg.androidfeatures.views.NormalDialog;
+import at.mg.androidfeatures.views.NoticeDialog;
 
-public class MainActivity extends AF_Activity {
+public class MainActivity extends AF_Activity implements NoticeDialog.NoticeDialogListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,27 @@ public class MainActivity extends AF_Activity {
     	Log.i(unicorns);
     }
     
+    
+    
+    public void showNormalDialog(View v){
+    	NormalDialog nd = new NormalDialog();
+    	nd.show(getSupportFragmentManager(), "NormalDialog");
+    }
+    
 
+    public void showNoticeDialog(View v){
+    	NoticeDialog nd = NoticeDialog.newInstance(this);
+    	nd.show(getSupportFragmentManager(), "NoticeDialog");
+    }
 
+	@Override
+	public void onDialogPositiveClick(DialogFragment dialog) {
+		Log.i("notice positive clicked");
+	}
+
+	@Override
+	public void onDialogNegativeClick(DialogFragment dialog) {
+		Log.i("notice negative clicked");
+	}
     
 }

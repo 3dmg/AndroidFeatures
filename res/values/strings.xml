@@ -14,4 +14,9 @@
         <item quantity="other">%d unicorns</item>
     </plurals>
     
+    <!-- Dialog -->
+    <string name="cancel">Cancel</string>
+    <string name="fire">Fire</string>
+    <string name="dialog_fire_missiles">Fire missiles?</string>
+    
 </resources>
