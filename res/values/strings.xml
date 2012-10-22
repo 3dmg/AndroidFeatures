@@ -3,7 +3,6 @@
     <string name="app_name">AndroidFeatures</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
 
     <string name="stop_message"><b>Stop.</b></string>
     <string name="stop_message_format">&lt;b&gt;Stop&lt;/b&gt;. %1$s</string>

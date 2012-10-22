@@ -4,11 +4,12 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
+        android:minSdkVersion="9"
+        android:targetSdkVersion="16" />
 
     <!-- if a permission needed a hardware it is automatically required if it not set here -->
 <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+<uses-permission android:name="android.permission.INTERNET"/>
 
     
     <application
@@ -17,14 +18,14 @@
         android:name=".MyApplication"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".activities.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:name=".activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.GoogleServiceTest"></activity>
     </application>
 
 </manifest>

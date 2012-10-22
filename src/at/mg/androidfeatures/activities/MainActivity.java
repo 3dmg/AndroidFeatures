@@ -1,5 +1,6 @@
 package at.mg.androidfeatures.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.Html;
@@ -62,6 +63,10 @@ public class MainActivity extends AF_Activity implements NoticeDialog.NoticeDial
 	@Override
 	public void onDialogNegativeClick(DialogFragment dialog) {
 		Log.i("notice negative clicked");
+	}
+	
+	public void gstestClick(View v){
+		startActivity(new Intent(this, GoogleServiceTest.class));
 	}
     
 }
