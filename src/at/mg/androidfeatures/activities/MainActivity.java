@@ -7,6 +7,7 @@ import android.text.Html;
 import android.view.View;
 import at.mg.androidfeatures.R;
 import at.mg.androidfeatures.activities.parents.AF_Activity;
+import at.mg.androidfeatures.activities.viewpager.ViewPagerTest;
 import at.mg.androidfeatures.util.Log;
 import at.mg.androidfeatures.views.NormalDialog;
 import at.mg.androidfeatures.views.NoticeDialog;
@@ -67,6 +68,10 @@ public class MainActivity extends AF_Activity implements NoticeDialog.NoticeDial
 	
 	public void gstestClick(View v){
 		startActivity(new Intent(this, GoogleServiceTest.class));
+	}
+
+	public void viewpagerClick(View v) {
+		startActivity(new Intent(this, ViewPagerTest.class));
 	}
     
 }

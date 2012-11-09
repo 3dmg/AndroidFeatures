@@ -26,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.GoogleServiceTest"></activity>
+        <activity android:name=".activities.viewpager.ViewPagerTest"></activity>
     </application>
 
 </manifest>

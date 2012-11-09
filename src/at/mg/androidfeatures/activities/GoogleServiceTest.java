@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.accounts.AccountManager;
@@ -15,6 +14,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import at.mg.androidfeatures.R;
 import at.mg.androidfeatures.util.Log;
 
@@ -60,6 +60,8 @@ public class GoogleServiceTest extends Activity {
 	}
 
 	private class AuthTask extends AsyncTask<String, Integer, Long> {
+		private String id;
+
 		@Override
 		protected Long doInBackground(String... params) {
 			String mail = params[0];
@@ -84,8 +86,11 @@ public class GoogleServiceTest extends Activity {
 			        String output = sb.toString();
 			        Log.i(output);
 			        JSONObject json = new JSONObject(output);
-			        String id = json.getString("id");
+			        id = json.getString("id");
 			        Log.i(id);
+			        
+			        
+			        
 //			        JSONArray venues = json.getJSONObject("response").getJSONArray("groups").getJSONObject(0).getJSONArray("items");
 //			        System.out.println(venues.length());
 				}
@@ -96,6 +101,13 @@ public class GoogleServiceTest extends Activity {
 				e.printStackTrace();
 			}
 			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(Long result) {
+			super.onPostExecute(result);
+			TextView hello = (TextView) findViewById(R.id.hellotext);
+	        hello.setText("googleid: " + id);
 		}
 	}
 
