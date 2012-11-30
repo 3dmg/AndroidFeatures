@@ -5,7 +5,7 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="17" />
 
     <!-- if a permission needed a hardware it is automatically required if it not set here -->
 <uses-feature android:name="android.hardware.nfc" android:required="false"/>
@@ -19,12 +19,16 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".activities.MainActivity" >
+        </activity>
+       <activity
+            android:name=".activities.newdesign.NDHome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.newdesign.NDProfile"></activity>
         <activity android:name=".activities.GoogleServiceTest"></activity>
         <activity android:name=".activities.viewpager.ViewPagerTest"></activity>
     </application>

@@ -42,6 +42,7 @@ public class NoticeDialog extends DialogFragment {
 					+ " must implement NoticeDialogListener");
 		}
 		NoticeDialog frag = new NoticeDialog();
+
 		return frag;
 	}
 
