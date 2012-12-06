@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     File created by the Android Action Bar Style Generator
+
+     Copyright (C) 2012 readyState Software Ltd
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <style name="Theme.quatscha" parent="@style/Theme.Sherlock.Light">
+       <item name="actionBarItemBackground">@drawable/selectable_background_quatscha</item>
+        <item name="popupMenuStyle">@style/quatscha_PopupMenu</item>
+        <item name="dropDownListViewStyle">@style/quatscha_DropDownListView</item>
+        <item name="actionBarTabStyle">@style/quatscha_ActionBarTabStyle</item>
+        <item name="actionDropDownStyle">@style/quatscha_DropDownNav</item>
+         <item name="actionBarStyle">@style/quatscha_solid_ActionBar</item>
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_quatscha</item>
+        <item name="android:popupMenuStyle">@style/quatscha_PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/quatscha_DropDownListView</item>
+        <item name="android:actionBarTabStyle">@style/quatscha_ActionBarTabStyle</item>
+        <item name="android:actionDropDownStyle">@style/quatscha_DropDownNav</item>
+        <item name="android:actionBarStyle">@style/quatscha_solid_ActionBar</item>
+        <item name="android:panelBackground">@drawable/menu_hardkey_panel_quatscha</item> 
+        <!--style addons -->
+        <item name="vpiTitlePageIndicatorStyle">@style/CustomTitlePageIndicator</item>
+        <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+    </style>
+
+    <style name="CustomTitlePageIndicator">
+        <item name="android:background">#36767A</item>
+        <item name="footerColor">#6399A0</item>
+        <item name="footerLineHeight">2dp</item>
+        <item name="footerIndicatorHeight">4dp</item>
+        <item name="footerIndicatorStyle">underline</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="selectedColor">#FFFFFF</item>
+        <item name="selectedBold">true</item>
+    </style>
+
+    <style name="quatscha_solid_ActionBar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="background">@drawable/ab_solid_quatscha</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_quatscha</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_quatscha</item>
+        <item name="progressBarStyle">@style/quatscha_ProgressBar</item>
+        <item name="android:background">@drawable/ab_solid_quatscha</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_quatscha</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_quatscha</item>
+        <item name="android:progressBarStyle">@style/quatscha_ProgressBar</item>
+    </style>
+
+    <style name="quatscha_transparent_ActionBar" parent="@style/Widget.Sherlock.Light.ActionBar">
+        <item name="background">@drawable/ab_transparent_quatscha</item>
+        <item name="progressBarStyle">@style/quatscha_ProgressBar</item>
+        <item name="android:background">@drawable/ab_transparent_quatscha</item>
+        <item name="android:progressBarStyle">@style/quatscha_ProgressBar</item>
+    </style>
+
+    <style name="quatscha_PopupMenu" parent="@style/Widget.Sherlock.Light.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_quatscha</item>
+    </style>
+
+    <style name="quatscha_DropDownListView" parent="@style/Widget.Sherlock.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_quatscha</item>
+    </style>
+
+    <style name="quatscha_ActionBarTabStyle" parent="@style/Widget.Sherlock.Light.ActionBar.TabView">
+        <item name="background">@drawable/tab_indicator_ab_quatscha</item>
+        <item name="android:background">@drawable/tab_indicator_ab_quatscha</item>
+    </style>
+
+    <style name="quatscha_DropDownNav" parent="@style/Widget.Sherlock.Light.Spinner.DropDown.ActionBar">
+        <item name="background">@drawable/spinner_background_ab_quatscha</item>
+        <item name="android:background">@drawable/spinner_background_ab_quatscha</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_quatscha</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_quatscha</item>
+    </style>
+
+    <style name="quatscha_ProgressBar" parent="@style/Widget.Sherlock.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_quatscha</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.quatscha.widget" parent="@style/Theme.Sherlock">
+        <item name="popupMenuStyle">@style/quatscha_PopupMenu</item>
+        <item name="dropDownListViewStyle">@style/quatscha_DropDownListView</item>
+        <item name="android:popupMenuStyle">@style/quatscha_PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/quatscha_DropDownListView</item>
+    </style>
+
+</resources>

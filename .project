@@ -3,6 +3,10 @@
 	<name>AndroidFeatures</name>
 	<comment></comment>
 	<projects>
+		<project>google-play-services_lib</project>
+		<project>library</project>
+		<project>SlidingMenuActivity</project>
+		<project>ViewPagerlibrary</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

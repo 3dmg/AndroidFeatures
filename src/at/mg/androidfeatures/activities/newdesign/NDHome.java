@@ -3,6 +3,7 @@ package at.mg.androidfeatures.activities.newdesign;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -11,20 +12,29 @@ import at.mg.androidfeatures.util.Log;
 import at.mg.androidfeatures.views.NoticeDialog.NoticeDialogListener;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.SubMenu;
 import com.slidingmenu.lib.SlidingMenu;
 import com.slidingmenu.lib.app.SlidingFragmentActivity;
 
 public class NDHome extends SlidingFragmentActivity implements NoticeDialogListener {
 
+	private Menu mainMenu;
+	private SubMenu subMenu1;
+
 	@Override
 	public void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
 
-		setContentView(R.layout.activity_ndhome);
-
 		ActionBar ab = this.getSupportActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);
+		ab.setLogo(R.drawable.logo);
+		ab.setDisplayUseLogoEnabled(true);
+		ab.setDisplayShowTitleEnabled(false);
+
+		setContentView(R.layout.activity_ndhome);
+
 
 		setBehindContentView(R.layout.slidingmenu);
 
@@ -45,7 +55,7 @@ public class NDHome extends SlidingFragmentActivity implements NoticeDialogListe
 		SlidingMenu sm = getSlidingMenu();
 
 		sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-		sm.setBehindOffset(200);
+		sm.setBehindOffset(100);
 
 		setSlidingActionBarEnabled(false);
 	}
@@ -53,8 +63,30 @@ public class NDHome extends SlidingFragmentActivity implements NoticeDialogListe
 	@Override
 	public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
 
-		getSupportMenuInflater().inflate(R.menu.activity_ndhome, menu);
-		return true;
+		mainMenu = menu;
+
+		subMenu1 = menu.addSubMenu("");
+		subMenu1.add("Settings");
+		subMenu1.add("About");
+		subMenu1.add("Help");
+
+		MenuItem subMenu1Item = subMenu1.getItem();
+		subMenu1Item.setIcon(R.drawable.ic_menu_moreoverflow_normal_holo_light);
+		subMenu1Item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+		return super.onCreateOptionsMenu(menu);
+
+		// getSupportMenuInflater().inflate(R.menu.activity_ndhome, menu);
+		// return true;
+	}
+
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_MENU) {
+			mainMenu.performIdentifierAction(subMenu1.getItem().getItemId(), 0);
+			return true;
+		}
+		return super.onKeyUp(keyCode, event);
 	}
 
 	@Override
