@@ -7,8 +7,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 import at.mg.androidfeatures.R;
 import at.mg.androidfeatures.util.Log;
+import at.mg.androidfeatures.views.NoticeDialog;
 import at.mg.androidfeatures.views.NoticeDialog.NoticeDialogListener;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -67,7 +69,7 @@ public class NDHome extends SlidingFragmentActivity implements NoticeDialogListe
 
 		subMenu1 = menu.addSubMenu("");
 		subMenu1.add("Settings");
-		subMenu1.add("About");
+		subMenu1.add(0, 23, 0, "About");
 		subMenu1.add("Help");
 
 		MenuItem subMenu1Item = subMenu1.getItem();
@@ -96,26 +98,29 @@ public class NDHome extends SlidingFragmentActivity implements NoticeDialogListe
 			toggle();
 			return true;
 		case R.id.menu_info:
-			// showNoticeDialog();
+
+			return true;
+		case 23:
+			showNoticeDialog();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-	// private void showNoticeDialog() {
-	// NoticeDialog nd = NoticeDialog.newInstance(this);
-	// nd.show(getSupportFragmentManager(), "NoticeDialog");
-	// }
+	private void showNoticeDialog() {
+		NoticeDialog nd = NoticeDialog.newInstance(this);
+		nd.show(getSupportFragmentManager(), "fragment_edit_name");
+	}
 
 	@Override
 	public void onDialogPositiveClick(DialogFragment dialog) {
-		// TODO Auto-generated method stub
+		Toast.makeText(this, "pos clicked", Toast.LENGTH_SHORT).show();
 
 	}
 
 	@Override
 	public void onDialogNegativeClick(DialogFragment dialog) {
-		// TODO Auto-generated method stub
+		Toast.makeText(this, "neg clicked", Toast.LENGTH_SHORT).show();
 
 	}
 }
