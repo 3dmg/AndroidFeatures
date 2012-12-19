@@ -1,15 +1,15 @@
 package at.mg.androidfeatures.activities.viewpager;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import at.mg.androidfeatures.framents.AF_Fragment;
 import at.mg.androidfeatures.util.Log;
 
-public class ContentFragment extends Fragment {
+public class ContentFragment extends AF_Fragment {
 
 	private int color;
 	private int position;

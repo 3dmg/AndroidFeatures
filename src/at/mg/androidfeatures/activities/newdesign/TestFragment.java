@@ -1,7 +1,6 @@
 package at.mg.androidfeatures.activities.newdesign;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +8,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+import at.mg.androidfeatures.framents.AF_Fragment;
 
-public final class TestFragment extends Fragment {
+public final class TestFragment extends AF_Fragment {
 	private static final String KEY_CONTENT = "TestFragment:Content";
 
 	public static TestFragment newInstance(String content) {

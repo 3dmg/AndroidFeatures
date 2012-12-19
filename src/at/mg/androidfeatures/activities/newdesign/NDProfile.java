@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import at.mg.androidfeatures.R;
@@ -49,6 +50,11 @@ public class NDProfile extends SherlockFragmentActivity {
 
 		setSupportProgressBarIndeterminateVisibility(true);
 		// bar.setTitle("Profil");
+
+		FragmentManager fm = getSupportFragmentManager();
+		FragmentTransaction ft = fm.beginTransaction();
+		// Add, remove or replace fragments
+		ft.commit();
 
 	}
 
