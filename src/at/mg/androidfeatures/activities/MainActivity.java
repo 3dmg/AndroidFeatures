@@ -6,6 +6,7 @@ import android.support.v4.app.DialogFragment;
 import android.text.Html;
 import android.view.View;
 import at.mg.androidfeatures.R;
+import at.mg.androidfeatures.activities.newdesign.NDHome;
 import at.mg.androidfeatures.activities.parents.AF_Activity;
 import at.mg.androidfeatures.activities.viewpager.ViewPagerTest;
 import at.mg.androidfeatures.util.Log;
@@ -72,6 +73,14 @@ public class MainActivity extends AF_Activity implements NoticeDialog.NoticeDial
 
 	public void viewpagerClick(View v) {
 		startActivity(new Intent(this, ViewPagerTest.class));
+	}
+
+	public void gridtestClick(View v) {
+		startActivity(new Intent(this, GridLayoutActivity.class));
+	}
+
+	public void ndClick(View v) {
+		startActivity(new Intent(this, NDHome.class));
 	}
     
 }

@@ -22,7 +22,8 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="16dp"
-        android:text="Button" />
+        android:onClick="ndClick"
+        android:text="NewDesign" />
 
     <Button
         android:id="@+id/button2"
@@ -42,5 +43,15 @@
         android:layout_alignTop="@+id/button1"
         android:onClick="viewpagerClick"
         android:text="ViewPager" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button3"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:onClick="gridtestClick"
+        android:text="GridLayout" />
 
 </RelativeLayout>

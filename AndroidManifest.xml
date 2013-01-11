@@ -20,13 +20,14 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity android:name=".activities.MainActivity" >
-        </activity>
-        <activity android:name=".activities.newdesign.NDHome" >
-            <intent-filter>
+              <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>       
+        </activity>
+        <activity android:name=".activities.newdesign.NDHome" >
+   
         </activity>
         <activity android:name=".activities.newdesign.NDProfile" >
             <meta-data
@@ -36,6 +37,8 @@
         <activity android:name=".activities.GoogleServiceTest" >
         </activity>
         <activity android:name=".activities.viewpager.ViewPagerTest" >
+        </activity>
+        <activity android:name=".activities.GridLayoutActivity" >
         </activity>
     </application>
 
