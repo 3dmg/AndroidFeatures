@@ -48,10 +48,20 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button3"
         android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/button2"
         android:onClick="gridtestClick"
         android:text="GridLayout" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_below="@+id/button4"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="21dp"
+        android:onClick="tabhostClick"
+        android:text="TabHost" />
 
 </RelativeLayout>
