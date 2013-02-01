@@ -42,6 +42,7 @@
         <activity android:name=".activities.GridLayoutActivity" >
         </activity>
         <activity android:name=".activities.newdesign.TabHostTest"></activity>
+        <activity android:name=".activities.newdesign.TabIndicatorTest"></activity>
     </application>
 
 </manifest>

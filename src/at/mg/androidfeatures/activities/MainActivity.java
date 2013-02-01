@@ -8,6 +8,7 @@ import android.view.View;
 import at.mg.androidfeatures.R;
 import at.mg.androidfeatures.activities.newdesign.NDHome;
 import at.mg.androidfeatures.activities.newdesign.TabHostTest;
+import at.mg.androidfeatures.activities.newdesign.TabIndicatorTest;
 import at.mg.androidfeatures.activities.parents.AF_Activity;
 import at.mg.androidfeatures.activities.viewpager.ViewPagerTest;
 import at.mg.androidfeatures.util.Log;
@@ -86,6 +87,10 @@ public class MainActivity extends AF_Activity implements NoticeDialog.NoticeDial
 
 	public void tabhostClick(View v) {
 		startActivity(new Intent(this, TabHostTest.class));
+	}
+
+	public void tabindiClick(View v) {
+		startActivity(new Intent(this, TabIndicatorTest.class));
 	}
     
 }

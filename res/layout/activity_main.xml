@@ -59,9 +59,17 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button4"
         android:layout_below="@+id/button4"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="14dp"
         android:onClick="tabhostClick"
         android:text="TabHost" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button5"
+        android:layout_toRightOf="@+id/button5"
+        android:onClick="tabindiClick"
+        android:text="TabIndic" />
 
 </RelativeLayout>

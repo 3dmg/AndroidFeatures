@@ -35,11 +35,12 @@
         <item name="android:panelBackground">@drawable/menu_hardkey_panel_quatscha</item> 
         <!--style addons -->
         <item name="vpiTitlePageIndicatorStyle">@style/CustomTitlePageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
         <item name="android:buttonStyle">@style/ButtonAppTheme</item>
         <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
     </style>
 
-    <style name="CustomTitlePageIndicator">
+     <style name="CustomTitlePageIndicator">
         <item name="android:background">#36767A</item>
         <item name="footerColor">#6399A0</item>
         <item name="footerLineHeight">2dp</item>
@@ -49,6 +50,24 @@
         <item name="selectedColor">#FFFFFF</item>
         <item name="selectedBold">true</item>
     </style>
+    
+    <style name="CustomTabPageIndicator" parent="Widget.TabPageIndicator">
+        <item name="android:background">@drawable/custom_tab_indicator</item>
+        <item name="android:textAppearance">@style/CustomTabPageIndicator.Text</item>
+        <item name="android:textColor">#FF555555</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:divider">@drawable/custom_tab_indicator_divider</item>
+        <item name="android:dividerPadding">10dp</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">8dp</item>
+    </style> 
+    
+       <style name="CustomTabPageIndicator.Text" parent="android:TextAppearance.Medium">
+        <item name="android:typeface">monospace</item>
+    </style>    
 
     <style name="quatscha_solid_ActionBar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
         <item name="background">@drawable/ab_solid_quatscha</item>
