@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.accounts.Account;
@@ -31,6 +32,11 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
  * addon google play services: setup and verification:
  * http://www.androiddesignpatterns.com/2013/01/google-play-services-setup.html
  * 
+ * http://android-developers.blogspot.co.at/2012/09/google-play-services-and-
+ * oauth-identity.html
+ * http://developer.android.com/google/play-services/index.html
+ * https://developers.google.com/accounts/docs/OAuth2UserAgent?hl=de
+ * 
  * @author User
  * 
  */
@@ -41,6 +47,8 @@ public class GoogleServiceTest extends Activity {
 	protected static final int NOTIFICATION_ID = 1;
 	private static final int REQUEST_CODE_RECOVER_PLAY_SERVICES = 1001;
 	private static final int REQUEST_CODE_ACCOUNTPICKER = 123;
+
+	private String token;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +64,8 @@ public class GoogleServiceTest extends Activity {
 	}
 
 	public void startTest(View v) {
-		showAccountPicker();
+		GoogleAuthUtil.invalidateToken(this, token);
+		// showAccountPicker();
 	}
 
 	@Override
@@ -101,7 +110,7 @@ public class GoogleServiceTest extends Activity {
 	}
 
 	private class AuthTask extends AsyncTask<String, Integer, Long> {
-		private String id;
+		private JSONObject account;
 
 		@Override
 		protected Long doInBackground(String... params) {
@@ -121,13 +130,14 @@ public class GoogleServiceTest extends Activity {
 					}
 					String output = sb.toString();
 					Log.i(output);
-					JSONObject json = new JSONObject(output);
-					id = json.getString("id");
-					Log.i(id);
+					account = new JSONObject(output);
+
+					Log.i(account.toString());
 
 					// JSONArray venues =
 					// json.getJSONObject("response").getJSONArray("groups").getJSONObject(0).getJSONArray("items");
 					// System.out.println(venues.length());
+					GoogleAuthUtil.invalidateToken(GoogleServiceTest.this, token);
 				}
 			} catch (UserRecoverableAuthException userRecoverableException) {
 				startActivityForResult(userRecoverableException.getIntent(), 123);
@@ -141,8 +151,25 @@ public class GoogleServiceTest extends Activity {
 		@Override
 		protected void onPostExecute(Long result) {
 			super.onPostExecute(result);
-			TextView hello = (TextView) findViewById(R.id.hellotext);
-			hello.setText("googleid: " + id);
+
+			try {
+				TextView hello = (TextView) findViewById(R.id.hellotext);
+				hello.setText("googleid: " + account.getString("id"));
+
+				hello = (TextView) findViewById(R.id.name);
+				hello.setText("Name: " + account.getString("name"));
+
+				hello = (TextView) findViewById(R.id.gender);
+				hello.setText("Gender: " + account.getString("gender"));
+
+				hello = (TextView) findViewById(R.id.brithday);
+				hello.setText("Birthday: " + account.getString("birthday"));
+
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 		}
 	}
 
@@ -153,6 +180,7 @@ public class GoogleServiceTest extends Activity {
 	 */
 	private boolean checkPlayServices() {
 		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+		Log.i("License: " + GooglePlayServicesUtil.getOpenSourceSoftwareLicenseInfo(this));
 		if (status != ConnectionResult.SUCCESS) {
 			if (GooglePlayServicesUtil.isUserRecoverableError(status)) {
 				showErrorDialog(status);
